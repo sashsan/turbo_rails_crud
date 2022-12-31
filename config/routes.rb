@@ -1,7 +1,13 @@
-Rails.application.routes.draw do
-  resources :messages
+# frozen_string_literal: true
 
-  root "messages#index"
+Rails.application.routes.draw do
+  resources :messages do
+    member do
+      post :edit
+    end
+  end
+
+  root 'messages#index'
 end
 
 
